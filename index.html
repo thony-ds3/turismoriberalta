@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Riberalta · Puerta de la Amazonía boliviana</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bar"></div>
+<header>
+ <div class="top">
+  <div class="logo"><i></i>Riberalta</div>
+  <nav id="nav" aria-label="Principal">
+   <button data-v="inicio" aria-current="page">Inicio</button>
+   <button data-v="explorar">Explorar</button>
+   <button data-v="lugares">Lugares</button>
+   <button data-v="sabores">Sabores</button>
+   <button data-v="viaje">Planifica</button>
+  </nav>
+  <button class="tgl" id="tgl" aria-label="Cambiar tema">◐</button>
+ </div>
+</header>
+
+<main>
+<!-- INICIO -->
+<section class="view on" id="v-inicio">
+ <div class="hero">
+  <span class="tag c">Beni · Bolivia</span>
+  <h1>Donde el Beni y el Madre de Dios se encuentran</h1>
+  <p>Riberalta es una puerta a la Amazonía boliviana: ríos anchos, bosque de castaña y una cultura que se vive al ritmo del agua.</p>
+  <button class="btn" data-go="explorar">Explorar experiencias</button>
+  <button class="btn alt" data-go="viaje">Planificar mi viaje</button>
+ </div>
+ <h2 class="sec">Una bandera, tres paisajes</h2>
+ <p class="sub">Los colores de la bandera municipal guían el diseño de este sitio.</p>
+ <div class="flag">
+  <div><b>Celeste</b><small>El cielo y la riqueza de sus ríos.</small></div>
+  <div><b>Rojo</b><small>El coraje de los pioneros y la gente de la región.</small></div>
+  <div><b>Verde</b><small>La inmensa selva amazónica y la esperanza.</small></div>
+ </div>
+ <div class="grid">
+  <div class="card c"><div class="ico">🛶</div><h3>Ríos</h3><p>Confluencia del Beni y el Madre de Dios, camino natural y fuente de vida.</p></div>
+  <div class="card"><div class="ico">🌳</div><h3>Selva y castaña</h3><p>Bosque amazónico y una economía ligada a la castaña.</p></div>
+  <div class="card r"><div class="ico">🎶</div><h3>Cultura viva</h3><p>Tradiciones, fiestas y sabores amazónicos por descubrir.</p></div>
+ </div>
+</section>
+
+<!-- EXPLORAR -->
+<section class="view" id="v-explorar">
+ <h2 class="sec">Qué hacer</h2>
+ <p class="sub">Filtra por el tipo de experiencia.</p>
+ <div class="chips" id="chips">
+  <button class="chip" aria-pressed="true" data-f="all">Todo</button>
+  <button class="chip" aria-pressed="false" data-f="rio">Río</button>
+  <button class="chip" aria-pressed="false" data-f="nat">Naturaleza</button>
+  <button class="chip" aria-pressed="false" data-f="cul">Cultura</button>
+ </div>
+ <div class="grid" id="acts">
+  <div class="card c" data-t="rio"><span class="tag c">Río</span><h3>Paseo por la confluencia</h3><p>Navega donde se unen el Beni y el Madre de Dios. Consulta operadores locales.</p></div>
+  <div class="card c" data-t="rio"><span class="tag c">Río</span><h3>Atardecer en la ribera</h3><p>Miradores y orillas para ver caer el sol sobre el agua.</p></div>
+  <div class="card" data-t="nat"><span class="tag">Naturaleza</span><h3>Excursión a la selva</h3><p>Caminatas guiadas por el bosque amazónico cercano.</p></div>
+  <div class="card" data-t="nat"><span class="tag">Naturaleza</span><h3>Observación de aves</h3><p>Aves y fauna de la región con guías de la zona.</p></div>
+  <div class="card r" data-t="cul"><span class="tag r">Cultura</span><h3>Ruta de la castaña</h3><p>Conoce cómo se procesa la castaña, un símbolo de la región.</p></div>
+  <div class="card r" data-t="cul"><span class="tag r">Cultura</span><h3>Plaza principal y mercados</h3><p>Vida cotidiana, artesanía y encuentros locales.</p></div>
+ </div>
+ <p class="note">Contenido de ejemplo. Verifica horarios, precios y operadores antes de publicar.</p>
+</section>
+
+<!-- LUGARES -->
+<section class="view" id="v-lugares">
+ <h2 class="sec">Lugares para visitar</h2>
+ <p class="sub">Toca el botón y se abrirá la ubicación en Google Maps.</p>
+ <h3>Dentro de la ciudad</h3>
+ <div class="grid" id="p-city"></div>
+ <h3>Cerca de Riberalta</h3>
+ <div class="grid" id="p-near"></div>
+</section>
+
+<!-- SABORES -->
+<section class="view" id="v-sabores">
+ <h2 class="sec">Sabores amazónicos</h2>
+ <p class="sub">Pescado de río, frutas tropicales y la castaña como protagonista.</p>
+ <div class="grid">
+  <div class="card c"><div class="ico">🐟</div><h3>Pescado de río</h3><p>Preparaciones frescas en comedores y restaurantes de la ciudad.</p></div>
+  <div class="card"><div class="ico">🥥</div><h3>Castaña</h3><p>Al natural, en dulces, galletas o acompañando platos.</p></div>
+  <div class="card r"><div class="ico">🍹</div><h3>Frutas y refrescos</h3><p>Jugos de frutas amazónicas para el calor tropical.</p></div>
+ </div>
+ <p class="note">Añade aquí nombres reales de restaurantes y platos típicos confirmados localmente.</p>
+</section>
+
+<!-- PLANIFICA -->
+<section class="view" id="v-viaje">
+ <h2 class="sec">Planifica tu viaje</h2>
+ <p class="sub">Elige cuántos días tienes y te sugerimos un ritmo.</p>
+ <div class="chips" id="days">
+  <button class="chip" aria-pressed="true" data-d="2">2 días</button>
+  <button class="chip" aria-pressed="false" data-d="3">3 días</button>
+  <button class="chip" aria-pressed="false" data-d="5">5 días</button>
+ </div>
+ <div class="steps" id="plan"></div>
+ <h3 style="margin-top:1.5rem">Cómo llegar y dónde dormir</h3>
+ <div class="grid">
+  <div class="card c"><div class="ico">🚌</div><h3>Por tierra</h3><p>Rutas desde otras ciudades del país. [Verificar empresas y tiempos]</p></div>
+  <div class="card"><div class="ico">✈️</div><h3>Por aire</h3><p>Vuelos hacia la región. [Verificar aerolíneas y frecuencias]</p></div>
+  <div class="card r"><div class="ico">🛏️</div><h3>Alojamiento</h3><p>Hoteles y hospedajes en la ciudad. [Agregar opciones reales]</p></div>
+ </div>
+</section>
+
+<script src="navigation.js"></script>
+</body>
+</html>
