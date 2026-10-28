@@ -1,0 +1,16 @@
+# Sistema / editor
+.vscode/
+.idea/
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Comprimidos y copias de seguridad
+*.zip
+*.rar
+*.7z
+
+# Registros temporales
+*.log
