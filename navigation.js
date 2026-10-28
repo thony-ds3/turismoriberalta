@@ -1,17 +1,17 @@
 /* ============ FOTOS DE LOS LUGARES ============
-   Pega aquí la dirección de cada foto, entre las comillas.
+   Dirección de cada foto, entre las comillas.
    Si dejas '' se muestra la ilustración de muestra.
-   Ejemplo:  cos:'img/costanera.jpg',
 ================================================ */
 var FOTOS={
- cos:'',  // Paseo Turístico La Costanera
- cat:'',  // Catedral de Riberalta
- pla:'',  // Plaza Principal
- tum:'',  // Tumichucuá
- aqu:''   // Área Protegida Aquicuana
+ cos:'img/costanera.jpeg',
+ cat:'img/catedral.jpeg',
+ pla:'img/plaza.jpeg',
+ tum:'img/tumichucua.jpeg',
+ aqu:'img/aquicuana.jpg'
 };
+var art={}; // sin ilustraciones de respaldo
 
-var views=['inicio','explorar','lugares','sabores','viaje','contacto'];
+var views=['inicio','explorar','lugares','sabores','viaje'];
 function show(v){
  views.forEach(function(x){
   document.getElementById('v-'+x).classList.toggle('on',x===v);
@@ -56,17 +56,9 @@ var places={
   {k:'pla',n:'Plaza Principal',i:'🌳',c:'g',d:'Corazón de la ciudad: sombra, vida local y punto de partida para recorrer el centro.',q:'Plaza Principal, Riberalta, Bolivia'}
  ],
  near:[
-  {k:'tum',n:'Tumichucuá',i:'🛶',c:'c',d:'Comunidad con lago para paseos en canoa y comida amazónica.',x:'≈ 20–25 km de la ciudad',q:'Tumichucuá, Riberalta, Bolivia'},
+  {k:'tum',n:'Tumichucua',i:'🛶',c:'c',d:'Comunidad con lago para paseos en canoa y comida amazónica.',x:'≈ 20–25 km de la ciudad',q:'Tumichucuá, Riberalta, Bolivia'},
   {k:'aqu',n:'Área Protegida Municipal Aquicuana',i:'🦜',c:'g',d:'Reserva de selva para observar aves y fauna.',x:'≈ 22 km al norte',q:'Aquicuana, Riberalta, Bolivia'}
  ]
-};
-var H='<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="';
-var FOTOS={
- cos:'img/costanera.jpeg',
- cat:'img/catedral.jpeg',
- pla:'img/plaza.jpeg',
- tum:'img/tumichucua.jpeg',
- aqu:'img/aquicuana.jpg'
 };
 function place(p){
  var q=encodeURIComponent(p.q);
@@ -77,10 +69,17 @@ function place(p){
 }
 document.getElementById('p-city').innerHTML=places.city.map(place).join('');
 document.getElementById('p-near').innerHTML=places.near.map(place).join('');
-document.getElementById('f').addEventListener('submit',function(e){
- e.preventDefault();document.getElementById('ok').style.display='block';
-});
-document.getElementById('tgl').addEventListener('click',function(){
- var r=document.documentElement,dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#0C1A14';
- r.setAttribute('data-theme',dark?'light':'dark');
-});
+var form=document.getElementById('f');
+if(form){
+ form.addEventListener('submit',function(e){
+  e.preventDefault();document.getElementById('ok').style.display='block';
+ });
+}
+var tgl=document.getElementById('tgl');
+if(tgl){
+ tgl.addEventListener('click',function(){
+  var r=document.documentElement;
+  var actual=r.getAttribute('data-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  r.setAttribute('data-theme',actual==='dark'?'light':'dark');
+ });
+}
